@@ -1,0 +1,100 @@
+{
+  "base_model": "GPT-2",
+  "instruct_model": "Qwen/Qwen2.5-7B-Instruct",
+  "test_prompts": [
+    {
+      "category": "사실 질문 (Factual Q&A)",
+      "question": "What is the capital of France?",
+      "base_prompt": "Q: What is the capital of France?\nA:"
+    },
+    {
+      "category": "수학 추론 (Math Reasoning)",
+      "question": "A farmer has 15 chickens. 3 flew away and he bought 7 more. How many chickens does the farmer have now?",
+      "base_prompt": "Q: A farmer has 15 chickens. 3 flew away and he bought 7 more. How many chickens does the farmer have now?\nA:"
+    },
+    {
+      "category": "번역 (Translation)",
+      "question": "Translate the following English sentence to Korean: 'The weather is beautiful today.'",
+      "base_prompt": "Translate English to Korean:\nEnglish: The weather is beautiful today.\nKorean:"
+    },
+    {
+      "category": "코드 생성 (Code Generation)",
+      "question": "Write a Python function that checks if a given number is prime. Include a docstring.",
+      "base_prompt": "# Python function to check if a number is prime\ndef is_prime(n):"
+    }
+  ],
+  "comparisons": [
+    {
+      "category": "사실 질문 (Factual Q&A)",
+      "question": "What is the capital of France?",
+      "base_model": {
+        "name": "GPT-2 (117M)",
+        "type": "사전학습 (Pre-trained)",
+        "prompt": "Q: What is the capital of France?\nA:",
+        "response": "The capital of France is Paris.\nQ: What is the capital of France?\nA: The capital of France is Paris.\nQ: What is the capital of France?\nA: The capital of France is Paris.\nQ: What is the capital of France?\nA: The capital of France is Paris.\nQ: What is the capital of France?\nA: The capital of France is Paris.\nQ: What is the capital of France?\nA:",
+        "time": 1.15
+      },
+      "instruct_model": {
+        "name": "Qwen2.5-7B-Instruct",
+        "type": "지시조정 (Instruction-Tuned)",
+        "chat_template": "<|im_start|>system\nYou are a helpful assistant. Answer concisely.<|im_end|>\n<|im_start|>user\nWhat is the capital of France?<|im_end|>\n<|im_start|>assistant\n",
+        "response": "The capital of France is Paris.",
+        "time": 0.47
+      }
+    },
+    {
+      "category": "수학 추론 (Math Reasoning)",
+      "question": "A farmer has 15 chickens. 3 flew away and he bought 7 more. How many chickens does the farmer have now?",
+      "base_model": {
+        "name": "GPT-2 (117M)",
+        "type": "사전학습 (Pre-trained)",
+        "prompt": "Q: A farmer has 15 chickens. 3 flew away and he bought 7 more. How many chickens does the farmer have now?\nA:",
+        "response": "The farmer has 15 chickens. 3 flew away and he bought 7 more. How many chickens does the farmer have now?\nQ: How many chickens does the farmer have now?\nA: The farmer has 15 chickens. 3 flew away and he bought 7 more. How many chickens does the farmer have now?\nQ: How many chickens does the farmer have now?\nA: The farmer has 15 chickens. 3 flew away and he bought 7 more. How many chickens does the farmer have",
+        "time": 1.17
+      },
+      "instruct_model": {
+        "name": "Qwen2.5-7B-Instruct",
+        "type": "지시조정 (Instruction-Tuned)",
+        "chat_template": "<|im_start|>system\nYou are a helpful assistant. Answer concisely.<|im_end|>\n<|im_start|>user\nA farmer has 15 chickens. 3 flew away and he bought 7 more. How many chickens does the farmer have now?<|im_end|>\n<|im_start|>assistant\n",
+        "response": "The farmer now has 15 - 3 + 7 = 19 chickens.",
+        "time": 0.44
+      }
+    },
+    {
+      "category": "번역 (Translation)",
+      "question": "Translate the following English sentence to Korean: 'The weather is beautiful today.'",
+      "base_model": {
+        "name": "GPT-2 (117M)",
+        "type": "사전학습 (Pre-trained)",
+        "prompt": "Translate English to Korean:\nEnglish: The weather is beautiful today.\nKorean:",
+        "response": "The weather is beautiful today.\nKorean: The weather is beautiful today.\nKorean: The weather is beautiful today.\nKorean: The weather is beautiful today.\nKorean: The weather is beautiful today.\nKorean: The weather is beautiful today.\nKorean: The weather is beautiful today.\nKorean: The weather is beautiful today.\nKorean: The weather is beautiful today.\nKorean: The weather is beautiful today.\nKorean:",
+        "time": 1.14
+      },
+      "instruct_model": {
+        "name": "Qwen2.5-7B-Instruct",
+        "type": "지시조정 (Instruction-Tuned)",
+        "chat_template": "<|im_start|>system\nYou are a helpful assistant. Answer concisely.<|im_end|>\n<|im_start|>user\nTranslate the following English sentence to Korean: 'The weather is beautiful today.'<|im_end|>\n<|im_start|>assistant\n",
+        "response": "오늘 날씨가 아름답습니다.",
+        "time": 0.26
+      }
+    },
+    {
+      "category": "코드 생성 (Code Generation)",
+      "question": "Write a Python function that checks if a given number is prime. Include a docstring.",
+      "base_model": {
+        "name": "GPT-2 (117M)",
+        "type": "사전학습 (Pre-trained)",
+        "prompt": "# Python function to check if a number is prime\ndef is_prime(n):",
+        "response": "return n\ndef prime(n): return n\ndef prime(n): return n\ndef prime(n): return n\ndef prime(n): return n\ndef prime(n): return n\ndef prime(n): return n\ndef prime(n): return n\ndef prime(n): return n\ndef prime(n): return n\ndef prime(n): return n\ndef prime(n): return n\ndef prime(n): return n\ndef",
+        "time": 1.22
+      },
+      "instruct_model": {
+        "name": "Qwen2.5-7B-Instruct",
+        "type": "지시조정 (Instruction-Tuned)",
+        "chat_template": "<|im_start|>system\nYou are a helpful assistant. Answer concisely.<|im_end|>\n<|im_start|>user\nWrite a Python function that checks if a given number is prime. Include a docstring.<|im_end|>\n<|im_start|>assistant\n",
+        "response": "```python\ndef is_prime(n):\n    \"\"\"\n    Check if the given number n is a prime number.\n\n    Args:\n    n (int): The number to check.\n\n    Returns:\n    bool: True if n is prime, False otherwise.\n    \"\"\"\n    if n <= 1:\n        return False\n    for i in range(2, int(n**0.5) + 1):\n        if n % i == 0:\n            return False\n    return True\n```\n\nThis function efficiently checks for primality by only iterating up to the square root of `n`.",
+        "time": 2.65
+      }
+    }
+  ]
+}
