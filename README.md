@@ -1,6 +1,6 @@
 # agent_ai
 
-**Version: v0.1.0**
+**Version: v0.1.1**
 
 LLM 추론(Inference) 학습 및 실험 프로젝트. 다양한 로컬 LLM 모델을 로드하고, 비교하고, 대화형으로 사용하는 코드 모음.
 
