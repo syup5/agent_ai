@@ -2,6 +2,20 @@
 
 ---
 
+## v0.1.2 — 2026-02-19 11:49:43
+
+**LLM Agent 아키텍처 연구 레포트 작성**
+
+- `RESEARCH_NOTE/20260219_113254_llm_agent_architecture.md` 작성
+  - LLM 기반 Agent 아키텍처: ReAct, Tool Use, Multi-Agent 설계 패턴 분석
+  - 약 4000단어 분량의 학술 레포트 (한국어, 기술 용어 영문 병기)
+  - 핵심 아키텍처 패턴 4종 분석: ReAct, Tool Use/Function Calling, Plan-and-Execute, Multi-Agent
+  - 주요 프레임워크 4종 비교: LangChain/LangGraph, LlamaIndex, AutoGen, CrewAI
+  - 메모리 아키텍처 (Short-term/Long-term/Reflective/Hierarchical) 및 RAG 통합 분석
+  - 11편의 검증된 논문 인용 (WebSearch/WebFetch로 모든 논문 직접 접속 검증)
+
+---
+
 ## v0.1.1 — 2026-02-19 11:20:59
 
 **PhD Dissertation Agent 논문 인용 검증 규칙 추가**

@@ -1,6 +1,6 @@
 # agent_ai
 
-**Version: v0.1.1**
+**Version: v0.1.2**
 
 LLM 추론(Inference) 학습 및 실험 프로젝트. 다양한 로컬 LLM 모델을 로드하고, 비교하고, 대화형으로 사용하는 코드 모음.
 
@@ -70,6 +70,11 @@ python 20260218_144802_universal_model_loader.py --hf "some/model-id" --method b
 # 사전학습 vs 지시조정 모델 비교
 python 20260215_180628_local_llm_inference.py
 ```
+
+## 연구 노트
+
+### `RESEARCH_NOTE/20260219_113254_llm_agent_architecture.md`
+LLM 기반 Agent 아키텍처 분석 레포트. ReAct, Tool Use, Plan-and-Execute, Multi-Agent 설계 패턴을 체계적으로 분석하고, LangChain/LangGraph, LlamaIndex, AutoGen, CrewAI 프레임워크를 비교. 11편의 검증된 논문 인용 포함.
 
 ## 디렉토리 구조
 
